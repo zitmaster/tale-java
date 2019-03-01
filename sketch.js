@@ -12,7 +12,7 @@ function setup() {
         window.msSpeechRecognition ||
         window.oSpeechRecognition ||
         window.SpeechRecognition;
-
+//Jeg skriver noget her
     cnv = createCanvas(400, 600);
     background('red');
     txt = createElement("h5", "Say something..")
