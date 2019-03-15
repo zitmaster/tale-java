@@ -8,7 +8,7 @@ let houseDrawing = false;
 
 function setup() {
     cnv = createCanvas(400, 400);
-    background('red');
+    background('black');
     //Check browser compatibility
     browserCompatible = window.webkitSpeechRecognition ||
         window.mozSpeechRecognition ||
@@ -32,6 +32,7 @@ function setup() {
         col: color(255,255,255,150),
         show: function(){
             ellipseMode(CENTER),
+            noStroke(),
             fill(this.col),
             ellipse(this.x ,this.y ,this.size,this.size)
         },
@@ -57,20 +58,24 @@ function draw() {
 
       if(time < 1000){
         pen.x--;
+        pen.col = color(255,0,255,150);
       }
       if (time > 1000 && time < 1500){
         pen.y--;
+        pen.col = color(0,255,0,150);
       }
       if(time > 1500 && time < 2000){
         pen.x++;
         pen.y--;
+        pen.col = color(0,0,255,150);
       }
-      if(time > 2000 && time < 2550){
+      if(time > 2000 && time < 2500){
         pen.y++;
         pen.x++;
       }
-      if(time > 2550 && time < 3000){
+      if(time > 2500 && time < 3000){
         pen.y++;
+        pen.col = color(0,255,0,150);
       }
     }
     pen.show();
