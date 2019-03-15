@@ -2,7 +2,8 @@
 //reference: http://ability.nyu.edu/p5.js-speech/
 //Cloned from github.com/simmoe/api_p5_speech
 
-let myRec, browserCompatible, pen, direction, displayWord;
+let myRec, browserCompatible, pen, direction, displayWord, timer;
+let houseDrawing = false;
 
 
 function setup() {
@@ -47,6 +48,31 @@ function draw() {
     if(direction == "right") pen.x += 1;
     if(direction == "down") pen.y += 1;
     if(direction == "up") pen.y -= 1;
+    if (direction == "firkant"){
+      if(!houseDrawing){
+        houseDrawing = true;
+        timer = millis();
+      }
+      let time = millis() - timer;
+
+      if(time < 1000){
+        pen.x--;
+      }
+      if (time > 1000 && time < 1500){
+        pen.y--;
+      }
+      if(time > 1500 && time < 2000){
+        pen.x++;
+        pen.y--;
+      }
+      if(time > 2000 && time < 2550){
+        pen.y++;
+        pen.x++;
+      }
+      if(time > 2550 && time < 3000){
+        pen.y++;
+      }
+    }
     pen.show();
     pen.bounce();
 }
@@ -85,8 +111,9 @@ function showResult() {
             
             case 'small':
             pen.size -= 10;
-              
-            
+
+            case 'firkant':
+            direction = "firkant"
           }
     }
 }
