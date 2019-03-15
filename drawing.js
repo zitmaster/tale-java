@@ -77,6 +77,9 @@ function draw() {
         pen.y++;
         pen.col = color(0,255,0,150);
       }
+      if(time > 3000){
+        houseDrawing = false;
+      }
     }
     pen.show();
     pen.bounce();
