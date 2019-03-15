@@ -73,11 +73,11 @@ function draw() {
         pen.y++;
         pen.x++;
       }
-      if(time > 2500 && time < 3000){
+      if(time > 2500 && time < 3050){
         pen.y++;
         pen.col = color(0,255,0,150);
       }
-      if(time > 3000){
+      if(time > 3050){
         houseDrawing = false;
       }
     }
