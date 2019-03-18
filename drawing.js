@@ -122,6 +122,7 @@ function showResult() {
 
             case 'firkant':
             direction = "firkant"
+            break;
           }
     }
 }
